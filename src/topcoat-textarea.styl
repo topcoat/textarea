@@ -29,6 +29,9 @@ Topcoat Large Textarea
 
 .topcoat-textarea--large
 	@extends .topcoat-textarea
-	font var-font
+	font var-font--large
 	font-weight var-font-weight
-	line-height var-line-height
+	line-height var-line-height--large
+
+.topcoat-textarea--large:focus
+	@extend .topcoat-textarea:focus

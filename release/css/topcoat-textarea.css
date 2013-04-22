@@ -26,10 +26,10 @@ limitations under the License.
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: var-padding;
-  border-radius: var-border-radius;
-  margin: var-margin;
-  font: 1.3rem "Source Sans", helvetica, arial, sans-serif;
+  padding: 10px 20px;
+  border-radius: 6px;
+  margin: 5px;
+  font: 1em "Source Sans", helvetica, arial, sans-serif;
   font-weight: 200;
   line-height: 2rem;
   resize: none;
@@ -39,7 +39,8 @@ limitations under the License.
   box-shadow: inset 0 1px rgba(0,0,0,0.12);
   color: #454545;
 }
-.topcoat-textarea:focus {
+.topcoat-textarea:focus,
+.topcoat-textarea--large:focus {
   background-color: #fff;
   color: #454545;
 }
@@ -53,5 +54,5 @@ Topcoat Large Textarea
 .topcoat-textarea--large {
   font: 1.3rem "Source Sans", helvetica, arial, sans-serif;
   font-weight: 200;
-  line-height: 2rem;
+  line-height: 1.5em;
 }
