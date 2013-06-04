@@ -1,4 +1,4 @@
 textarea
 ========
 
-TopCoat default textarea skin
+Topcoat default textarea skin
