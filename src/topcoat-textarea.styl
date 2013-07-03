@@ -1,8 +1,8 @@
 @import textarea-mixin
 
 /*
- TopCoat Textarea
- ------------------------
+Textarea
+------------------------
 
     <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea>
 
@@ -10,28 +10,31 @@
 
 .topcoat-textarea
     textarea-base()
+    padding var-padding
+    border-radius var-border-radius
+    line-height var-line-height
     border var-border
     background-color var-background-color
     box-shadow var-box-shadow
     color var-color
 
 .topcoat-textarea:focus
-	background-color var-background--focus
-	color var-color--focus
+    background-color var-background--focus
+    color var-color--focus
 
 /*
-Topcoat Large Textarea
- ------------------------
+Large Textarea
+------------------------
 
-	<textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea>
+    <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea>
 
 */
 
 .topcoat-textarea--large
-	@extends .topcoat-textarea
-	font var-font--large
-	font-weight var-font-weight
-	line-height var-line-height--large
+    @extends .topcoat-textarea
+    font-size var-font-size--large
+    font-weight var-font-weight--large
+    line-height var-line-height--large
 
 .topcoat-textarea--large:focus
-	@extend .topcoat-textarea:focus
+    @extend .topcoat-textarea:focus
