@@ -4,55 +4,46 @@ module.exports = function(grunt) {
 
     // Project configuration.
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        gruntfile: {
-            src: 'Gruntfile.js'
-        },
-
-        topcoat: {
-            download: {
-                options: {
-                    srcPath: 'tmp/src/',
-                    repos: '<%= pkg.topcoat %>'
-                }
-            }
-        },
-
-        unzip: {
-            controls: {
-                src: 'tmp/src/controls/*.zip',
-                dest: 'tmp/src/controls'
-            },
-            utils: {
-                src: 'tmp/src/utils/*.zip',
-                dest: 'tmp/src/utils'
-            }
-        },
 
         clean: {
-            tmp: ['tmp'],
-            zip: ['tmp/src/*.zip', 'tmp/src/controls/*.zip', 'tmp/src/skins/*.zip', 'tmp/src/utils/*.zip']
+            release: ['css']
         },
 
-        compile: {
             stylus: {
+        compile: {
                 options: {
-                    import: ['textarea-mixin', 'utils', 'variables'],
+                    paths: ['node_modules/topcoat-utils/src/mixins', 'node_modules/topcoat-textarea-base/src/mixins', 'node_modules/topcoat-theme/src', 'node_modules/topcoat-theme/src/includes'],
+                    import: ['textarea-mixin', 'utils', 'theme-topcoat-mobile-light', 'global', 'fonts'],
                     compress: false
                 },
-                files: {
-                    'release/css/topcoat-textarea.css': ['src/copyright.styl', 'src/topcoat-textarea.styl']
-                }
+                files: [{
+                    src: 'src/topcoat-textarea.styl',
+                    dest: 'css/topcoat-textarea.css'
+                }]
             }
         },
 
         cssmin: {
             minify: {
                 expand: true,
-                cwd: 'release/css/',
+                cwd: 'css',
                 src: ['*.css', '!*.min.css'],
-                dest: 'release/css/',
-                ext: '.min.css'
+                dest: 'css',
+                ext: '.min.css',
+                options: {
+                    banner: grunt.file.read('src/copyright.styl').toString()
+                }
+            }
+        },
+
+        copy: {
+            release: {
+                files: [{
+                    expand: true,
+                    flatten: true,
+                    src: 'node_modules/topcoat-theme/font/**/*',
+                    dest: 'font'
+                }]
             }
         },
 
@@ -65,29 +56,37 @@ module.exports = function(grunt) {
                 ext: '.test.html'
             }
         },
-        nodeunit: {
-            tests: ['test/*.test.js']
+
+        simplemocha: {
+            options: {
+                ui: 'bdd',
+                reporter: 'Nyan'
+            },
+            all: {
+                src: ['test/*.test.js']
+            }
         },
+
         watch: {
-            files: 'src/*.styl',
-            tasks: ['build']
+            files: 'src/**/*.styl',
+            tasks: ['build', 'test']
         }
     });
+
 
     // These plugins provide necessary tasks.
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-stylus');
     grunt.loadNpmTasks('grunt-contrib-jade');
-    grunt.loadNpmTasks('grunt-contrib-nodeunit');
-    grunt.loadNpmTasks('grunt-topcoat');
-    grunt.loadNpmTasks('grunt-zip');
+    grunt.loadNpmTasks('grunt-simple-mocha');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-
-    grunt.loadTasks('tasks');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // Default task.
-    grunt.registerTask('default', ['clean', 'topcoat', 'build']);
-    grunt.registerTask('build', ['compile', 'cssmin', 'jade', 'nodeunit']);
-    grunt.registerTask('test', ['nodeunit']);
+    grunt.registerTask('default', ['clean', 'build', 'test', 'release']);
+    grunt.registerTask('build', ['stylus', 'jade']);
+    grunt.registerTask('test', ['simplemocha']);
+    grunt.registerTask('release', ['cssmin', 'copy']);
+
 };

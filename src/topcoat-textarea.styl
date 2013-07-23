@@ -1,3 +1,20 @@
+/**
+*
+* Copyright 2012 Adobe Systems Inc.;
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*
+*/
 @import textarea-mixin
 
 /*
@@ -10,16 +27,18 @@ Textarea
 
 .topcoat-textarea
     textarea-base()
-    padding var-padding
+    padding var-padding--container
+    font-size var-font-size--textarea
+    font-weight var-font-weight
     border-radius var-border-radius
     line-height var-line-height
     border var-border
     background-color var-background-color
-    box-shadow var-box-shadow
+    box-shadow var-box-shadow--down
     color var-color
 
 .topcoat-textarea:focus
-    background-color var-background--focus
+    background-color var-background-color--focus
     color var-color--focus
 
 /*
@@ -32,8 +51,7 @@ Large Textarea
 
 .topcoat-textarea--large
     @extends .topcoat-textarea
-    font-size var-font-size--large
-    font-weight var-font-weight--large
+    font-size var-font-size--textarea--large
     line-height var-line-height--large
 
 .topcoat-textarea--large:focus
