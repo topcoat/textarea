@@ -34,7 +34,8 @@
     "grunt-contrib-jade": "~0.5.0",
     "grunt-simple-mocha": "~0.4.0",
     "copy": "0.0.1",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-copy": "~0.4.1",
+    "topdoc-theme": "~0.2.6"
   },
   "dependencies": {
     "topcoat-utils": "~0.1.1",
