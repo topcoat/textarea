@@ -38,13 +38,23 @@ body {
 * limitations under the License.
 *
 */
-/*
-Textarea
-------------------------
-
+/* topdoc
+  name: Textarea
+  description: A whole area, just for text.
+  modifiers:
+    :disabled: Disabled state
+  markup:
     <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea>
-
- */
+    <br>
+    <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - form
+    - input
+    - textarea
+*/
 .topcoat-textarea,
 .topcoat-textarea--large {
   box-sizing: border-box;
@@ -73,14 +83,34 @@ Textarea
   background-color: #fff;
   color: #000;
 }
-/*
-Large Textarea
-------------------------
-
+.topcoat-textarea:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
+/* topdoc
+  name: Large Textarea
+  description: A whole area, just for text; now available in large.
+  modifiers:
+    :disabled: Disabled state
+  markup:
     <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea>
-
+    <br>
+    <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - form
+    - input
+    - textarea
 */
 .topcoat-textarea--large {
   font-size: 3rem;
   line-height: 4rem;
+}
+.topcoat-textarea--large:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
 }
