@@ -21,18 +21,31 @@
 var grunt = require('grunt'),
     assert = require('assert');
 
-describe('Topcoat text input', function() {
+describe('Topcoat textarea', function() {
     'use strict';
 
     it('should output correct css', function() {
-        var actual = grunt.file.read('css/topcoat-textarea.css');
-        var expected = grunt.file.read('test/expected/topcoat-textarea.css');
+        var actual = grunt.file.read('css/topcoat-textarea-desktop-dark.css');
+        var expected = grunt.file.read('test/expected/topcoat-textarea-desktop-dark.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
-    it('should not have any unrendered variables', function() {
-        var actual = grunt.file.read('css/topcoat-textarea.css');
+    it('should not have any unrendered variables desktop dark', function() {
+        var actual = grunt.file.read('css/topcoat-textarea-desktop-dark.css');
+        assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
+    });
+    it('should not have any unrendered variables desktop light', function() {
+        var actual = grunt.file.read('css/topcoat-textarea-desktop-light.css');
+        assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
+    });
+    it('should not have any unrendered variables mobile dark', function() {
+        var actual = grunt.file.read('css/topcoat-textarea-mobile-dark.css');
+        assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
+    });
+    it('should not have any unrendered variables mobile light', function() {
+        var actual = grunt.file.read('css/topcoat-textarea-mobile-light.css');
         assert.equal(actual.match(/var-[a-z-]*[a-z]+/g), null, 'should not have missing vars');
     });
 
 });
+
