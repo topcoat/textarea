@@ -16,15 +16,23 @@
 *
 */
 @import textarea-mixin
-
-/*
-Textarea
-------------------------
-
+/* topdoc
+  name: Textarea
+  description: A whole area, just for text.
+  modifiers:
+    :disabled: Disabled state
+  markup:
     <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea>
-
- */
-
+    <br>
+    <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - form
+    - input
+    - textarea
+*/
 .topcoat-textarea
     textarea-base()
     padding var-padding--container
@@ -41,12 +49,25 @@ Textarea
     background-color var-background-color--focus
     color var-color--focus
 
-/*
-Large Textarea
-------------------------
+.topcoat-textarea:disabled
+  disabled()
 
+/* topdoc
+  name: Large Textarea
+  description: A whole area, just for text; now available in large.
+  modifiers:
+    :disabled: Disabled state
+  markup:
     <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea>
-
+    <br>
+    <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
+  tags:
+    - desktop
+    - light
+    - mobile
+    - form
+    - input
+    - textarea
 */
 
 .topcoat-textarea--large
@@ -56,3 +77,6 @@ Large Textarea
 
 .topcoat-textarea--large:focus
     @extend .topcoat-textarea:focus
+
+.topcoat-textarea--large:disabled
+  disabled()
