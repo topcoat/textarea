@@ -22,8 +22,6 @@
     :disabled: Disabled state
   markup:
     <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea>
-    <br>
-    <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
   tags:
     - desktop
     - light
@@ -58,8 +56,6 @@
     :disabled: Disabled state
   markup:
     <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea>
-    <br>
-    <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
   tags:
     - desktop
     - light
