@@ -38,6 +38,6 @@
   "dependencies": {
     "topcoat-utils": "~0.1.1",
     "topcoat-theme": "~0.5.12",
-    "topcoat-textarea-base": "~0.3.0"
+    "topcoat-textarea-base": "~0.3.2"
   }
 }
