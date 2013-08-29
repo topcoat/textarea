@@ -24,9 +24,27 @@ var grunt = require('grunt'),
 describe('Topcoat textarea', function() {
     'use strict';
 
-    it('should output correct css', function() {
+    it('should output correct dark desktop css', function() {
         var actual = grunt.file.read('css/topcoat-textarea-desktop-dark.css');
         var expected = grunt.file.read('test/expected/topcoat-textarea-desktop-dark.css');
+        assert.equal(actual, expected, 'should generate correct css');
+    });
+
+    it('should output correct light desktop css', function() {
+        var actual = grunt.file.read('css/topcoat-textarea-desktop-light.css');
+        var expected = grunt.file.read('test/expected/topcoat-textarea-desktop-light.css');
+        assert.equal(actual, expected, 'should generate correct css');
+    });
+
+    it('should output correct dark mobile css', function() {
+        var actual = grunt.file.read('css/topcoat-textarea-mobile-dark.css');
+        var expected = grunt.file.read('test/expected/topcoat-textarea-mobile-dark.css');
+        assert.equal(actual, expected, 'should generate correct css');
+    });
+
+    it('should output correct light mobile css', function() {
+        var actual = grunt.file.read('css/topcoat-textarea-mobile-light.css');
+        var expected = grunt.file.read('test/expected/topcoat-textarea-mobile-light.css');
         assert.equal(actual, expected, 'should generate correct css');
     });
 
