@@ -34,6 +34,13 @@
   resize: none;
   outline: none;
 }
+.textarea:disabled,
+.topcoat-textarea:disabled,
+.topcoat-textarea--large:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
 /* topdoc
   name: Textarea
   description: A whole area, just for text.
@@ -41,6 +48,9 @@
     :disabled: Disabled state
   markup:
     <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea>
+    <br>
+    <br>
+    <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
   tags:
     - desktop
     - light
@@ -58,14 +68,27 @@
   border-radius: 4px;
   line-height: 1.313rem;
   border: 1px solid #303233;
-  background-color: #595b5b;
+  background-color: #404141;
   -webkit-box-shadow: inset 0 1px rgba(0,0,0,0.18);
   box-shadow: inset 0 1px rgba(0,0,0,0.18);
   color: #c6c8c8;
+  letter-spacing: 0;
 }
 .topcoat-textarea:focus,
 .topcoat-textarea--large:focus {
   background-color: #646666;
+  color: #fff;
+  border: 1px solid #0940fd;
+  -webkit-box-shadow: 0 0 0 2px #6fb5f1;
+  box-shadow: 0 0 0 2px #6fb5f1;
+}
+.topcoat-textarea:disabled::-webkit-input-placeholder {
+  color: #fff;
+}
+.topcoat-textarea:disabled::-moz-placeholder {
+  color: #fff;
+}
+.topcoat-textarea:disabled:-ms-input-placeholder {
   color: #fff;
 }
 /* topdoc
@@ -75,6 +98,9 @@
     :disabled: Disabled state
   markup:
     <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea>
+    <br>
+    <br>
+    <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
   tags:
     - desktop
     - light
@@ -86,4 +112,16 @@
 .topcoat-textarea--large {
   font-size: 1.3rem;
   line-height: 1.688rem;
+}
+.topcoat-textarea--large:disabled {
+  color: #fff;
+}
+.topcoat-textarea--large:disabled::-webkit-input-placeholder {
+  color: #fff;
+}
+.topcoat-textarea--large:disabled::-moz-placeholder {
+  color: #fff;
+}
+.topcoat-textarea--large:disabled:-ms-input-placeholder {
+  color: #fff;
 }
