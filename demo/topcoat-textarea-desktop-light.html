@@ -54,13 +54,13 @@
             <header>
               <h2>Textarea</h2>
             </header>
-            <section class="component"><textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea></section>
+            <section class="component"><textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea><br><br><textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" disabled></textarea></section>
             <footer>
               <div class="showcode"><a href="#">Show code snippets</a></div>
               <section class="code">
                 <div>
                   <h3>HTML</h3>
-                  <pre class="html"><code data-language="html">&lt;textarea class=&quot;topcoat-textarea&quot; rows=&quot;6&quot; cols=&quot;36&quot; placeholder=&quot;Textarea&quot;&gt;&lt;/textarea&gt;</code></pre>
+                  <pre class="html"><code data-language="html">&lt;textarea class=&quot;topcoat-textarea&quot; rows=&quot;6&quot; cols=&quot;36&quot; placeholder=&quot;Textarea&quot;&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;&lt;textarea class=&quot;topcoat-textarea&quot; rows=&quot;6&quot; cols=&quot;36&quot; placeholder=&quot;Textarea&quot; disabled&gt;&lt;/textarea&gt;</code></pre>
                 </div>
                 <div>
                   <h3>CSS</h3>
@@ -73,14 +73,27 @@
   border-radius: 4px;
   line-height: 1.313rem;
   border: 1px solid #a5a8a8;
-  background-color: #e5e9e8;
+  background-color: #d3d7d7;
   -webkit-box-shadow: inset 0 1px rgba(0,0,0,0.12);
   box-shadow: inset 0 1px rgba(0,0,0,0.12);
   color: #454545;
+  letter-spacing: 0;
 }
 .topcoat-textarea:focus,
 .topcoat-textarea--large:focus {
   background-color: #edf1f1;
+  color: #000;
+  border: 1px solid #0940fd;
+  -webkit-box-shadow: 0 0 0 2px #6fb5f1;
+  box-shadow: 0 0 0 2px #6fb5f1;
+}
+.topcoat-textarea:disabled::-webkit-input-placeholder {
+  color: #000;
+}
+.topcoat-textarea:disabled::-moz-placeholder {
+  color: #000;
+}
+.topcoat-textarea:disabled:-ms-input-placeholder {
   color: #000;
 }</code></pre>
                 </div>
@@ -91,19 +104,31 @@
             <header>
               <h2>Large Textarea</h2>
             </header>
-            <section class="component"><textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea></section>
+            <section class="component"><textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea><br><br><textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea" disabled></textarea></section>
             <footer>
               <div class="showcode"><a href="#">Show code snippets</a></div>
               <section class="code">
                 <div>
                   <h3>HTML</h3>
-                  <pre class="html"><code data-language="html">&lt;textarea class=&quot;topcoat-textarea--large&quot; rows=&quot;6&quot; cols=&quot;36&quot; placeholder=&quot;Textarea&quot;&gt;&lt;/textarea&gt;</code></pre>
+                  <pre class="html"><code data-language="html">&lt;textarea class=&quot;topcoat-textarea--large&quot; rows=&quot;6&quot; cols=&quot;36&quot; placeholder=&quot;Textarea&quot;&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;&lt;textarea class=&quot;topcoat-textarea--large&quot; rows=&quot;6&quot; cols=&quot;36&quot; placeholder=&quot;Textarea&quot; disabled&gt;&lt;/textarea&gt;</code></pre>
                 </div>
                 <div>
                   <h3>CSS</h3>
                   <pre class="css"><code data-language="css">.topcoat-textarea--large {
   font-size: 1.3rem;
   line-height: 1.688rem;
+}
+.topcoat-textarea--large:disabled {
+  color: #000;
+}
+.topcoat-textarea--large:disabled::-webkit-input-placeholder {
+  color: #000;
+}
+.topcoat-textarea--large:disabled::-moz-placeholder {
+  color: #000;
+}
+.topcoat-textarea--large:disabled:-ms-input-placeholder {
+  color: #000;
 }
 </code></pre>
                 </div>

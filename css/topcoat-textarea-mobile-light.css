@@ -34,6 +34,13 @@
   resize: none;
   outline: none;
 }
+.textarea:disabled,
+.topcoat-textarea:disabled,
+.topcoat-textarea--large:disabled {
+  opacity: 0.3;
+  cursor: default;
+  pointer-events: none;
+}
 /* topdoc
   name: Textarea
   description: A whole area, just for text.
@@ -41,6 +48,9 @@
     :disabled: Disabled state
   markup:
     <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea>
+    <br>
+    <br>
+    <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
   tags:
     - desktop
     - light
@@ -58,14 +68,27 @@
   border-radius: 6px;
   line-height: 3rem;
   border: 1px solid #a5a8a8;
-  background-color: #e5e9e8;
+  background-color: #d3d7d7;
   -webkit-box-shadow: inset 0 1px rgba(0,0,0,0.12);
   box-shadow: inset 0 1px rgba(0,0,0,0.12);
   color: #454545;
+  letter-spacing: 1px;
 }
 .topcoat-textarea:focus,
 .topcoat-textarea--large:focus {
   background-color: #edf1f1;
+  color: #000;
+  border: 1px solid #0940fd;
+  -webkit-box-shadow: 0 0 0 2px #6fb5f1;
+  box-shadow: 0 0 0 2px #6fb5f1;
+}
+.topcoat-textarea:disabled::-webkit-input-placeholder {
+  color: #000;
+}
+.topcoat-textarea:disabled::-moz-placeholder {
+  color: #000;
+}
+.topcoat-textarea:disabled:-ms-input-placeholder {
   color: #000;
 }
 /* topdoc
@@ -75,6 +98,9 @@
     :disabled: Disabled state
   markup:
     <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea"></textarea>
+    <br>
+    <br>
+    <textarea class="topcoat-textarea--large" rows="6" cols="36" placeholder="Textarea" disabled></textarea>
   tags:
     - desktop
     - light
@@ -86,4 +112,16 @@
 .topcoat-textarea--large {
   font-size: 3rem;
   line-height: 4.375rem;
+}
+.topcoat-textarea--large:disabled {
+  color: #000;
+}
+.topcoat-textarea--large:disabled::-webkit-input-placeholder {
+  color: #000;
+}
+.topcoat-textarea--large:disabled::-moz-placeholder {
+  color: #000;
+}
+.topcoat-textarea--large:disabled:-ms-input-placeholder {
+  color: #000;
 }
