@@ -15,7 +15,8 @@
 * limitations under the License.
 *
 */
-@import textarea
+
+@import "topcoat-textarea-base";
 /* topdoc
   name: Textarea
   description: A whole area, just for text.
@@ -34,36 +35,42 @@
     - input
     - textarea
 */
-.topcoat-textarea
-  @extend .textarea
-  padding var-padding--container
-  font-size var-font-size--textarea
-  font-weight var-font-weight
-  border-radius var-border-radius
-  line-height var-line-height
-  border var-border
-  background-color var-background-color--text-input
-  box-shadow var-box-shadow--text-input
-  color var-color
-  letter-spacing var-letter-spacing
+.textarea {
+  extend: %textarea;
+  padding: var(padding--container);
+  font-size: var(font-size--textarea);
+  font-weight: var(font-weight);
+  border-radius: var(border-radius);
+  line-height: var(line-height);
+  border: var(border);
+  background-color: var(background-color--text-input);
+  box-shadow: var(box-shadow--text-input);
+  color: var(color);
+  letter-spacing: var(letter-spacing);
+}
 
-.topcoat-textarea:focus
-  background-color var-background-color--text-input--focus
-  color var-color--focus
-  border var-border--focus
-  box-shadow var-box-shadow--text-input, var-box-shadow--focus
+.textarea:focus {
+  background-color: var(background-color--text-input--focus);
+  color: var(color--focus);
+  border: var(border--focus);
+  box-shadow: var(box-shadow--text-input), var(box-shadow--focus);
+}
 
-.topcoat-textarea:disabled
-  @extend .textarea:disabled
+.textarea:disabled {
+  extend: %textarea--disabled;
+}
 
-.topcoat-textarea:disabled::-webkit-input-placeholder
-  color var-color--focus
+.textarea:disabled::-webkit-input-placeholder {
+  color: var(color--focus);
+}
 
-.topcoat-textarea:disabled::-moz-placeholder
-  color var-color--focus
+.textarea:disabled::-moz-placeholder {
+  color: var(color--focus);
+}
 
-.topcoat-textarea:disabled:-ms-input-placeholder
-  color var-color--focus
+.textarea:disabled:-ms-input-placeholder {
+  color: var(color--focus);
+}
 
 
 /* topdoc
@@ -85,23 +92,28 @@
     - textarea
 */
 
-.topcoat-textarea--large
-  @extends .topcoat-textarea
-  font-size var-font-size--textarea--large
-  line-height var-line-height--large
+.textarea--large {
+  extend: .textarea;
+  font-size: var(font-size--textarea--large);
+  line-height: var(line-height--large);
+}
 
-.topcoat-textarea--large:focus
-  @extend .topcoat-textarea:focus
+.textarea--large:focus {
+  extend: .textarea:focus;
+}
 
-.topcoat-textarea--large:disabled
-  @extend .textarea:disabled
-  color var-color--focus
+.textarea--large:disabled {
+  extend: .textarea:disabled;
+  color: var(color--focus);
+}
 
-.topcoat-textarea--large:disabled::-webkit-input-placeholder
-  color var-color--focus
+.textarea--large:disabled::-webkit-input-placeholder {
+  color: var(color--focus);
+}
+.textarea--large:disabled::-moz-placeholder {
+  color: var(color--focus);
+}
 
-.topcoat-textarea--large:disabled::-moz-placeholder
-  color var-color--focus
-
-.topcoat-textarea--large:disabled:-ms-input-placeholder
-  color var-color--focus
+.textarea--large:disabled:-ms-input-placeholder {
+  color: var(color--focus);
+}
